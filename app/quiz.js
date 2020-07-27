@@ -1,125 +1,125 @@
 var quiz = [{
         "question": {
-            "text": "what",
+            "text": "1",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "2",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "3",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "4",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "5",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "6",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "7",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "8",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "9",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "10",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "11",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "12",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "13",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "14",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "15",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "16",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "17",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "what",
+            "text": "18",
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
@@ -162,5 +162,10 @@ for (i=0; i < answerBtns.childElementCount; i++) {
     answerBtns.children[i].addEventListener("click", (event) => {
     console.log(event.target.id);
     currentQuestion++;
+    if (currentQuestion == quiz.length) {
+        localStorage.score = "test";
+        window.location.href = "./endgame.html";
+    }
+    displayQuestion();//changes to next question
     });
 };
