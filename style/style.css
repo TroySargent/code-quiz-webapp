@@ -17,24 +17,26 @@ a {
     color: #2E3B51;
 }
 
-
-/* ul {
+section {
+    position: relative;
+    margin: 0 auto 2rem auto;
+}
+ul {
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 li {
     list-style-type: none;
-} */
+} 
 
 .container {
-    width: 100%;
+    width: 50%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-    text-align: center;
+    text-align: left;
 }
 
 @media (min-width:576px) {
@@ -62,7 +64,6 @@ li {
 }
 
 p {
-    margin: 0 auto 2rem auto;
     width: 50%;
 }
 
