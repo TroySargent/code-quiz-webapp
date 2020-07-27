@@ -1,3 +1,8 @@
+function renderLeaderboard() {
+
+};
+
+
 //return home
 document.querySelector("#goBack").addEventListener("click", () => {
     window.location.href = "./index.html";

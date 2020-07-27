@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     endMessage.textContent = localStorage.score;
 });
 
-var userInitials = document.querySelector("#userInitials").value;
+var userInput = document.querySelector("#userInitials");
 
-document.querySelector("#submitScore").addEventListener("submit", () => {
-    userInitials 
+document.querySelector("#submitScore").addEventListener("submit", (event) => {
+    event.preventDefault();
+    userInitials = userInput.nodeValue;
+    localStorage.userInitials = userInitials
 });
