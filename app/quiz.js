@@ -157,13 +157,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000)
 });
 
-//adds event listener to each button in answer section
-for (i=0; i < answerBtns.childElementCount; i++) {
-    answerBtns.children[i].addEventListener("click", (event) => {
+
+answerBtns.addEventListener("click", (event) => {
     console.log(event.target.id);
     if (event.target.id == quiz[currentQuestion].question.correctIndex) {
         score++;
-        console.log(score);
+        console.log(`score: ${score}`);
     };
     currentQuestion++;
     if (currentQuestion == quiz.length) {
@@ -171,5 +170,5 @@ for (i=0; i < answerBtns.childElementCount; i++) {
         window.location.href = "./endgame.html";
     }
     displayQuestion();//changes to next question
-    });
-};
+});
+
