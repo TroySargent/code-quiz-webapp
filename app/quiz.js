@@ -158,8 +158,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-answerBtns.addEventListener("click", (event) => {
-    console.log(event.target.id);
+
+answerBtns.addEventListener("click", function(event) {
+    const isButton = event.target.nodeName === 'BUTTON'; //verify that button is pressed and not area around it
+    if (!isButton) {
+      return;
+    };
+    console.log(event.target.id)
     if (event.target.id == quiz[currentQuestion].question.correctIndex) {
         score++;
         console.log(`score: ${score}`);

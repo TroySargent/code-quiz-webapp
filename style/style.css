@@ -21,14 +21,6 @@ section {
     position: relative;
     margin: 0 auto 2rem auto;
 }
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    list-style-type: none;
-} 
 
 .container {
     width: 50%;
@@ -86,3 +78,17 @@ button {
     min-width: 10%; 
     display: block; 
   }
+
+/* 
+* Padding and margin on
+* highscore leaderboard list */
+ ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 1em 0 1em 0;
+    list-style-type: none;
+    font-size: 1.5em;
+}
