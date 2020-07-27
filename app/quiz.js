@@ -133,7 +133,7 @@ var score = 0;
 var i;
 var currentQuestion = 0;
 
-function startQuiz() {
+function displayQuestion() {
     question.textContent = quiz[currentQuestion].question.text;
     for (i=0; i < quiz[currentQuestion].question.answers.length;  i++) {
         answerBtns.children[i].textContent = quiz[currentQuestion].question.answers[i];
@@ -146,7 +146,7 @@ timer.textContent = quizTime;
 
 //start quiz timer for 100 seconds
 document.addEventListener("DOMContentLoaded", () => {
-    startQuiz()
+    displayQuestion()
     setInterval(() => {
         quizTime--;
         timer.textContent = quizTime;
@@ -157,6 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000)
 });
 
-document.querySelector("#answers").addEventListener("submit", (event) => {
-    console.log(event.target)
-});
+//adds event listener to each button in answer section
+for (i=0; i < answerBtns.childElementCount; i++) {
+    answerBtns.children[i].addEventListener("click", (event) => {
+    console.log(event.target.id);
+    currentQuestion++;
+    });
+};

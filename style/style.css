@@ -77,3 +77,12 @@ button {
     outline: none;
     margin-bottom: 1em;
 }
+
+/* 
+* This makes the quiz.html
+* buttons stack vertically */
+
+.btn-group button {
+    min-width: 10%; 
+    display: block; 
+  }
