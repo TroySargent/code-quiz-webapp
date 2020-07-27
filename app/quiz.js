@@ -161,9 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
 for (i=0; i < answerBtns.childElementCount; i++) {
     answerBtns.children[i].addEventListener("click", (event) => {
     console.log(event.target.id);
+    if (event.target.id == quiz[currentQuestion].question.correctIndex) {
+        score++;
+        console.log(score);
+    };
     currentQuestion++;
     if (currentQuestion == quiz.length) {
-        localStorage.score = "test";
+        localStorage.score = score;
         window.location.href = "./endgame.html";
     }
     displayQuestion();//changes to next question
