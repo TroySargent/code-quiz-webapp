@@ -160,20 +160,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 answerBtns.addEventListener("click", function(event) {
-    const isButton = event.target.nodeName === 'BUTTON'; //verify that button is pressed and not area around it
+    //verify that button is pressed and not area around it
+    const isButton = event.target.nodeName === 'BUTTON'; 
     if (!isButton) {
       return;
     };
-    console.log(event.target.id)
+    //if correct add to score
     if (event.target.id == quiz[currentQuestion].question.correctIndex) {
         score++;
         console.log(`score: ${score}`);
     };
+    //if wrong take away ten seconds on quiz
+    if (event.target.id != quiz[currentQuestion].question.correctIndex) {
+        quizTime -= 10;
+    };
+    //increment to next question
     currentQuestion++;
-    if (currentQuestion == quiz.length) {
+    //if end of quiz, end game
+    if (currentQuestion == quiz.length || quizTime <= 0) {
         localStorage.score = score;
         window.location.href = "./endgame.html";
     }
-    displayQuestion();//changes to next question
+    displayQuestion();//displays next question
 });
 

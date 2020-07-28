@@ -2,7 +2,17 @@ var leaderList = document.querySelector("ul")
 renderLeaderboard();
 
 function renderLeaderboard() {  
-    userList = JSON.parse(localStorage.userList);
+
+    var userList = JSON.parse(localStorage.getItem("userList"));
+    if (userList) {
+        userList.sort(function (a, b) {
+            return b.userScore - a.userScore;
+            });
+    };
+
+    if (userList == null) {
+        userList = [];
+    };      
 
     for (var i = 0; i < userList.length; i++) {
         var userLi = document.createElement("li");
