@@ -2,7 +2,7 @@ var leaderList = document.querySelector("ul")
 renderLeaderboard();
 
 function renderLeaderboard() {  
-
+    leaderList.innerHTML = "";
     var userList = JSON.parse(localStorage.getItem("userList"));
     if (userList) {
         userList.sort(function (a, b) {

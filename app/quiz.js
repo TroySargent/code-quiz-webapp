@@ -67,71 +67,16 @@ var quiz = [{
             "answers": ["1", "2", "3", "4"],
             "correctIndex": 1
         }
-    },
-    {
-        "question": {
-            "text": "11",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "12",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "13",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "14",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "15",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "16",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "17",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "18",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
     }
 
 ];
 
-var question = document.querySelector(".question")
-var answerBtns = document.querySelector(".answers")
+var question = document.querySelector(".question");
+var answerBtns = document.querySelector(".answers");
 var score = 0;
 var i;
 var currentQuestion = 0;
+var notification = document.createElement("p");
 
 function displayQuestion() {
     question.textContent = quiz[currentQuestion].question.text;
@@ -158,29 +103,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 answerBtns.addEventListener("click", function(event) {
     //verify that button is pressed and not area around it
     const isButton = event.target.nodeName === 'BUTTON'; 
     if (!isButton) {
-      return;
+        return;
     };
     //if correct add to score
     if (event.target.id == quiz[currentQuestion].question.correctIndex) {
-        score++;
+        score += 5;
+        answerBtns.append(notification);
+        notification.innerHTML = `<hr> Correct! Score: ${score}`;
         console.log(`score: ${score}`);
     };
     //if wrong take away ten seconds on quiz
     if (event.target.id != quiz[currentQuestion].question.correctIndex) {
         quizTime -= 10;
+        answerBtns.append(notification);
+        notification.innerHTML = `<hr> Wrong! 10 seconds deducted!`;
     };
     //increment to next question
     currentQuestion++;
-    //if end of quiz, end game
-    if (currentQuestion == quiz.length || quizTime <= 0) {
-        localStorage.score = score;
-        window.location.href = "./endgame.html";
-    }
-    displayQuestion();//displays next question
+    
+    //wait to clear correct/wrong notification and next question for 1 second
+    setTimeout(function() { 
+        //if end of quiz, end game
+        if (currentQuestion == quiz.length || quizTime <= 0) {
+            localStorage.score = score;
+            window.location.href = "./endgame.html";
+        }
+        //displays next question
+        displayQuestion();
+        notification.innerHTML = "";
+    }, 1000);
 });
 
