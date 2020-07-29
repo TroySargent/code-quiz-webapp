@@ -87,10 +87,10 @@ function displayQuestion() {
 
 var timer = document.querySelector(".timer");
 var quizTime = 100;
-timer.textContent = quizTime;
 
 //start quiz timer for 100 seconds
 document.addEventListener("DOMContentLoaded", () => {
+    timer.textContent = quizTime;
     displayQuestion()
     setInterval(() => {
         quizTime--;
