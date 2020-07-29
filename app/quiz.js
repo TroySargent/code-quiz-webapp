@@ -1,71 +1,71 @@
 var quiz = [{
         "question": {
-            "text": "1",
-            "answers": ["1", "2", "3", "4"],
+            "text": "What is the difference between == and === in JavaScript?",
+            "answers": ["There is no difference.", "JavaScript only uses = .", "== performs type coercion and === checks strict equality", "=== compares numbers and == compares strings."],
+            "correctIndex": 2
+        }
+    },
+    {
+        "question": {
+            "text": "What method can be used to convert strings into JSON?",
+            "answers": ["JSON.parse()", "JSON.stringify()", ".toString()", ".split()"],
+            "correctIndex": 0
+        }
+    },
+    {
+        "question": {
+            "text": "Which variables are block scopes elements?",
+            "answers": ["const only", "let and const", "let only", "var only"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "2",
-            "answers": ["1", "2", "3", "4"],
+            "text": "Which CSS property can be changed to relative, absolute, or fixed?",
+            "answers": ["height", "margin", "line height", "position"],
+            "correctIndex": 3
+        }
+    },
+    {
+        "question": {
+            "text": "What is neccessary to include JavaScript in an HTML file?",
+            "answers": ["link tag", "reference tag", "source tag", "script tag"],
+            "correctIndex": 3
+        }
+    },
+    {
+        "question": {
+            "text": "How do you end a line in JavaScript?",
+            "answers": [";", ",", ".", "|"],
+            "correctIndex": 0
+        }
+    },
+    {
+        "question": {
+            "text": "What parameter is required to find out information about clicks, keydowns, etc.?",
+            "answers": ["watch", "event", "listen", "info"],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "3",
-            "answers": ["1", "2", "3", "4"],
+            "text": "How can you convert a string into an array?",
+            "answers": [".split('')", ".toArray()", "Array.convert()", "not possible"],
+            "correctIndex": 0
+        }
+    },
+    {
+        "question": {
+            "text": "What is JQuery?",
+            "answers": ["It is a cool new language.", "It standardized syntax for interacting with Web APIs across browsers.", "It lets you do machine learning.", "It is a nickname for JavaScript."],
             "correctIndex": 1
         }
     },
     {
         "question": {
-            "text": "4",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "5",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "6",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "7",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "8",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "9",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
-        }
-    },
-    {
-        "question": {
-            "text": "10",
-            "answers": ["1", "2", "3", "4"],
-            "correctIndex": 1
+            "text": "Which is a template string?",
+            "answers": ["`{variable}`", "'variable'", "_variable_", "~variable~"],
+            "correctIndex": 0
         }
     }
 

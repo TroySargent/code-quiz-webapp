@@ -8,12 +8,13 @@ function renderLeaderboard() {
         userList.sort(function (a, b) {
             return b.userScore - a.userScore;
             });
-    };
+    };// orders leaderboard greatest to least
 
     if (userList == null) {
         userList = [];
     };      
 
+    //adds each user in memory to leaderboard
     for (var i = 0; i < userList.length; i++) {
         var userLi = document.createElement("li");
         leaderList.appendChild(userLi);
