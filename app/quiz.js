@@ -114,7 +114,6 @@ answerBtns.addEventListener("click", function(event) {
         score += 5;
         answerBtns.append(notification);
         notification.innerHTML = `<hr> Correct! Score: ${score}`;
-        console.log(`score: ${score}`);
     };
     //if wrong take away ten seconds on quiz
     if (event.target.id != quiz[currentQuestion].question.correctIndex) {
